@@ -10,35 +10,6 @@ body {
   background-attachment: fixed;
 }
 
-/* CSS for the close button */
-.close-button {
-  position: absolute;
-  top: 10px;
-  /* Adjust the top position as needed */
-  right: 10px;
-  /* Adjust the right position as needed */
-  background-color: #0C98B4;
-  border: 2px solid #60E3D5;
-  /* Red background color, you can change this */
-  color: #FFFFFF;
-  /* White text color */
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: Inter;
-  font-size: 1em;
-  font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
-  z-index: 1;
-  /* Ensure it's on top of other content */
-}
-
-.close-button:hover {
-  box-shadow: -4px 4px 4px 0px #00000040;
-  transition: 1s;
-  /* Change color on hover */
-}
 
 /* Optionally, you can center content vertically and horizontally */
 body::before {
@@ -63,7 +34,7 @@ body::before {
 
 .centered-content .greetings {
   font-family: Inter;
-  font-size: 32px;
+  font-size: 2em;
   font-weight: 600;
   line-height: 39px;
   letter-spacing: 0em;
@@ -206,7 +177,10 @@ body::before {
   position: absolute;
   right: 10%;
   /* align-items: center; */
+
+
 }
+
 
 .data_util form {
   max-width: 400px;
@@ -287,4 +261,13 @@ body::before {
   width: 30px;
   margin-left: 10px;
   /* Add spacing between the text and the image */
+}
+
+.hide-class{
+  opacity: 0;
+}
+
+.show-class{
+  opacity: 1;
+  transition: 1s;
 }

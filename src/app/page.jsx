@@ -1,82 +1,142 @@
+"use client";
+
 import Image from "next/image";
-import styles from "./page.module.css";
+import { useState } from "react";
+import ConfirmElement from "../../components/confirm-element/confirmElement";
+import { useRouter } from "next/navigation";
+import CloseButton from "../../components/close-button/closeButton";
+import Footer from "../../components/footer/footer";
+import Instruction from "../../components/instruction/instruction";
 
 export default function Home() {
+  const router = useRouter();
+
+  const [showUtilSection, setShowUtilSection] = useState(false);
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+
+  const onProceedButtonClick = () => {
+    // Set the state variable to true to show the .util_section
+    setShowUtilSection(true);
+  };
+
+  const onConfirmButtonClick = () => {
+    setShowConfirmDialog(true);
+  };
+
+  const handleCancel = () => {
+    // Set showConfirmDialog to false when Cancel button is clicked
+    setShowConfirmDialog(false);
+  };
+
+  const goToUnitPage = () => {
+    router.push("/unit/control");
+  };
+
   return (
     <body>
+      <ConfirmElement
+        message="Are you sure you want to close this app?"
+        status={showConfirmDialog}
+        onCancel={handleCancel}
+      />
       <div className="centered-content">
-        <button class="close-button">X</button>
-        <div class="greetings">
+        <CloseButton onClick={onConfirmButtonClick} />
+        <div className="greetings">
           <p>Hello Username, welcome to the MSD700 application!</p>
         </div>
-      </div>
 
-      <div class="data-section">
-        <div>
-          <div class="label-section">
-            <p>
-              <span>
-                <Image
-                src="/icons/information-circle-svgrepo-com.svg"
-                alt="Picture of the author"
+        <div className="data-section">
+          <div>
+            <div className="label-section">
+              <p>
+                <span>
+                  <Image
+                    src="/icons/information-circle-svgrepo-com.svg"
+                    alt="Picture of the author"
+                    width={500}
+                    height={500}
+                  />
+                </span>
+                Please input your MSD700 unit data.
+              </p>
+            </div>
+            <div className="input-section">
+              <form action="#" method="post">
+                <label htmlFor="unitID">Unit ID:</label>
+                <input
+                  type="text"
+                  id="unitID"
+                  name="unitID"
+                  defaultValue="Unit A"
+                  required
+                />
+
+                <label htmlFor="ipAddress">IP Address:</label>
+                <input
+                  type="text"
+                  id="ipAddress"
+                  name="ipAddress"
+                  defaultValue="192.168.18.17"
+                  required
+                />
+                <input
+                  type="submit"
+                  value="Proceed"
+                  onClick={onProceedButtonClick}
+                />
+              </form>
+            </div>
+          </div>
+
+          <div
+            className={`util_section ${
+              showUtilSection === true ? "show-class" : "hide-class"
+            }`}
+          >
+            <Image
+              src="/images/MSD700.png"
+              alt="Picture of the author"
+              width={400}
+              height={500}
+            />
+            <div className="data_util">
+              <form action="#" method="post">
+                <label htmlFor="battery">Battery:</label>
+                <input
+                  type="text"
+                  id="battery"
+                  defaultValue="50%"
+                  name="battery"
+                />
+
+                <label htmlFor="uptime">Uptime:</label>
+                <input
+                  type="text"
+                  id="uptime"
+                  defaultValue="05:33:00"
+                  name="uptime"
+                />
+              </form>
+            </div>
+            <button
+              onClick={goToUnitPage}
+              aria-label="Submit form Button"
+              className="submit_button"
+            >
+              <p>Login</p>
+              <Image
+                src="/icons/arrow-right-3-svgrepo-com (1).svg"
+                alt=""
                 width={500}
                 height={500}
-                />
-                {/* <img
-                  class="icon_information"
-                  src="/icons/information-circle-svgrepo-com.svg"
-                  alt=""
-                /> */}
-              </span>
-              Please input your MSD700 unit data.
-            </p>
-          </div>
-          <div class="input-section">
-            <form action="#" method="post">
-              <label for="unitID">Unit ID:</label>
-              <input
-                type="text"
-                id="unitID"
-                name="unitID"
-                value="Unit A"
-                required
               />
-
-              <label for="ipAddress">IP Address:</label>
-              <input
-                type="text"
-                id="ipAddress"
-                name="ipAddress"
-                value="192.168.18.17"
-                required
-              />
-
-              <input type="submit" value="Proceed" />
-            </form>
+            </button>
           </div>
-        </div>
-
-        <div class="util_section">
-          <img src="/images/MSD700.png" alt="" />
-
-          <div class="data_util">
-            <form action="#" method="post">
-              <label for="battery">Battery:</label>
-              <input type="text" id="battery" value="50%" name="battery" />
-
-              <label for="uptime">Uptime:</label>
-              <input type="text" id="uptime" value="05:33:00" name="uptime" />
-            </form>
-          </div>
-          <button class="submit_button">
-            <p>Login</p>
-            <img
-              src="/icons/arrow-right-3-svgrepo-com (1).svg"
-              alt=""
-            />
-          </button>
         </div>
       </div>
+
+      <Instruction />
+      <Footer />
     </body>
   );
 }
