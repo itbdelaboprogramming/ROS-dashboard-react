@@ -1,13 +1,13 @@
 Download all files first.
 
-## Get in into the directory using
+## Get into the directory using
 ```bash
 cd Ros-dahboard-react
 ```
 
 ## Install all dependencies
 ```bash
-npm I
+npm install
 ```
 
 ## Getting Started
