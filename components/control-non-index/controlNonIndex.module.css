@@ -27,7 +27,7 @@
 
 .centerDiv {
 
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 26px;
     font-weight: 500;
     line-height: 31px;
@@ -79,7 +79,7 @@
     /* Vertically center the <p> element within its container */
     margin: 0;
     /* Remove default margin for <p> element */
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 1em;
     font-weight: 500;
     line-height: 27px;

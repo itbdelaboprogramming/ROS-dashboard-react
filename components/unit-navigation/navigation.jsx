@@ -40,7 +40,7 @@ export default function Navigation() {
             }`}
             onClick={goToControlPage}
           >
-            <Link href="/unit/control">
+            <Link href="/unit/control" className={styles.buttonLink}>
               <img src="/icons/map-svgrepo-com.svg" alt="" />
               <p>Control Mode</p>
             </Link>
@@ -51,7 +51,7 @@ export default function Navigation() {
             }`}
             onClick={goToMappingPage}
           >
-            <Link href="/unit/mapping">
+            <Link href="/unit/mapping" className={styles.buttonLink}>
               <img src="/icons/map-svgrepo-com.svg" alt="" />
               <p>Mapping</p>
             </Link>
@@ -62,7 +62,7 @@ export default function Navigation() {
             }`}
             onClick={goToDatabasePage}
           >
-            <Link href="/unit/database">
+            <Link href="/unit/database" className={styles.buttonLink}>
               <img src="/icons/map-svgrepo-com.svg" alt="" />
               <p>Database</p>
             </Link>

@@ -5,7 +5,7 @@ export default function ClosingPage() {
   return (
     <div className={style.container}>
       <div className={style.centerDiv}>
-        <img class="icon" src="/icons/Icon-person-white.svg" alt="" />
+        <img className="icon" src="/icons/Icon-person-white.svg" alt="" />
         <p>
           Thank you for using this apps.
           <br />

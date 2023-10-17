@@ -62,23 +62,29 @@ export default function Home() {
             </div>
             <div className="input-section">
               <form action="#" method="post">
-                <label htmlFor="unitID">Unit ID:</label>
-                <input
-                  type="text"
-                  id="unitID"
-                  name="unitID"
-                  defaultValue="Unit A"
-                  required
-                />
+                <div className="inputUnit">
+                  <label htmlFor="unitID">Unit ID</label>
+                  <p className="separateElement">:</p>
+                  <input
+                    type="text"
+                    id="unitID"
+                    name="unitID"
+                    defaultValue="Unit A"
+                    required
+                  />
+                </div>
 
-                <label htmlFor="ipAddress">IP Address:</label>
-                <input
-                  type="text"
-                  id="ipAddress"
-                  name="ipAddress"
-                  defaultValue="192.168.18.17"
-                  required
-                />
+                <div className="inputUnit">
+                  <label htmlFor="ipAddress">IP Address</label>
+                  <p className="separateElement">:</p>
+                  <input
+                    type="text"
+                    id="ipAddress"
+                    name="ipAddress"
+                    defaultValue="192.168.18.17"
+                    required
+                  />
+                </div>
                 <input
                   type="submit"
                   value="Proceed"
@@ -96,26 +102,34 @@ export default function Home() {
             <Image
               src="/images/MSD700.png"
               alt="Picture of the author"
-              width={400}
-              height={500}
+              width={350}
+              height={264}
             />
             <div className="data_util">
               <form action="#" method="post">
-                <label htmlFor="battery">Battery:</label>
-                <input
-                  type="text"
-                  id="battery"
-                  defaultValue="50%"
-                  name="battery"
-                />
+                <div className="inputUnit">
+                  <label htmlFor="battery">Battery</label>
+                  <p className="separateElement">:</p>
+                  <input
+                    type="text"
+                    id="battery"
+                    name="battery"
+                    defaultValue="50%"
+                    required
+                  />
+                </div>
 
-                <label htmlFor="uptime">Uptime:</label>
-                <input
-                  type="text"
-                  id="uptime"
-                  defaultValue="05:33:00"
-                  name="uptime"
-                />
+                <div className="inputUnit">
+                  <label htmlFor="uptime">Uptime</label>
+                  <p className="separateElement">:</p>
+                  <input
+                    type="text"
+                    id="uptime"
+                    name="uptime"
+                    defaultValue="05:33:00"
+                    required
+                  />
+                </div>
               </form>
             </div>
             <button

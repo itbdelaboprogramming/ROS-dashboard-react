@@ -1,6 +1,6 @@
 .theFooter {
     display: flex;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     right: 10px;
     width: 100vw;
@@ -8,27 +8,25 @@
     /* padding-right: 1%; */
     padding-bottom: 1%;
     z-index: 50;
-
-
-    font-family: Inter;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 23px;
-    letter-spacing: 0em;
     text-align: center;
 
 }
 
 /* Add this CSS for the copyright section */
 .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: auto;
     margin-top: auto;
+    width: 188px;
+    height: 35px;
     /* Pushes the copyright text to the bottom */
     color: #D0E1E7;
     background-color: #4E6CB1;
     border: 2px solid #60E3D5;
     border-radius: 10px;
-    font-size: 0.8em;
-    padding-left: 1%;
-    padding-right: 1%;
+    font-size: 19px;
+    /* padding-left: 1%; */
+    /* padding-right: 1%; */
 }

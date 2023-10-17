@@ -50,7 +50,7 @@
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 1em;
     font-weight: 500;
     line-height: 19px;
@@ -117,7 +117,7 @@
     justify-content: space-between;
     align-items: center;
 
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 26px;
     font-weight: 500;
     line-height: 31px;
@@ -135,7 +135,7 @@
     height: 20%;
     padding: 0.5%;
 
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 0.5em;
     font-weight: 500;
     line-height: 19px;
@@ -174,7 +174,7 @@
 
 .theTable .header th {
     background-color: #0C98B4;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 1em;
     font-weight: 500;
     line-height: 23px;
@@ -190,7 +190,7 @@
     color: #D0E1E7;
     background-color: hsla(190, 40%, 60%, 1);
 
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 1em;
     font-weight: 500;
     line-height: 19px;
@@ -321,7 +321,7 @@
 }
 
 .bottomSection .warning p {
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 0.8em;
     font-weight: 500;
     line-height: 17px;
@@ -338,7 +338,7 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 1em;
     font-weight: 500;
     line-height: 19px;
@@ -409,7 +409,7 @@
     justify-content: center;
     gap: 5px;
 
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 1em;
     font-weight: 500;
     line-height: 19px;
@@ -452,7 +452,7 @@
 
     background-color: #D0E1E7;
 
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 1em;
     font-weight: 500;
     line-height: 19px;
@@ -474,7 +474,7 @@
 /* --------------------------------------------- */
 
 .centerDiv {
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 26px;
     font-weight: 500;
     line-height: 31px;
