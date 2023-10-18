@@ -1,18 +1,15 @@
 /* CSS for the close button */
 .closeButton {
     position: absolute;
+    right: 25px;
     top: 10px;
-    /* Adjust the top position as needed */
-    right: 10px;
-    /* Adjust the right position as needed */
     background-color: #0C98B4;
     border: 2px solid #60E3D5;
-    /* Red background color, you can change this */
     color: #FFFFFF;
-    /* White text color */
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+    
     font-family: 'Inter', sans-serif;
     font-size: 1em;
     font-weight: 500;

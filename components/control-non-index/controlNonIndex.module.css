@@ -1,19 +1,20 @@
 
 .mapSection {
-    width: 80vw;
-    height: 75vh;
+    width: 1102px;
+    max-height: 1024px;
+    height: 80%;
     background-color: #D0E1E7;
     border: 2px solid #0C98B4;
     border-radius: 20px;
 
     /* Horizontally center the content */
 
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
 
     box-shadow: -10px 10px 4px 0px #00000040;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    margin-top: 110px;
+    right: 25px;
 
     z-index: 2;
 

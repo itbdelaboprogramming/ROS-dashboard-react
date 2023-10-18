@@ -149,7 +149,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Instruction />
+      {/* <Instruction /> */}
       <Footer />
     </body>
   );

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+
 body {
   background-image: url('/images/Walpaper.png');
   /* Replace with the path to your image */
@@ -8,13 +9,14 @@ body {
   background-repeat: no-repeat;
   /* Prevent the image from repeating */
   background-attachment: fixed;
+  overflow: auto;
 }
 
 
 /* Optionally, you can center content vertically and horizontally */
 body::before {
   content: "";
-  display: block;
+  /* display: block; */
   height: 100%;
   /* vertical-align: middle; */
   margin-left: auto;
@@ -27,9 +29,9 @@ body::before {
   justify-content: center;
   /* align-items: center; */
 
-  height: 30vh;
-
   padding-top: 100px;
+
+  position: relative;
 
 }
 
@@ -51,10 +53,11 @@ body::before {
 
 .data-section {
   width: 80%;
-  padding-left: 10%;
-  display: flex;
+  /* padding-left: 10%; */
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: row; /* Initially, arrange contents in a row */
 }
 
 .label-section {
@@ -113,7 +116,8 @@ body::before {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Add this line */
+  justify-content: space-between;
+  /* Add this line */
 }
 
 
@@ -143,7 +147,7 @@ body::before {
 }
 
 .separateElement {
-  margin-left:auto;
+  margin-left: auto;
 }
 
 .input-section label {
@@ -222,8 +226,8 @@ body::before {
   justify-content: center;
   align-items: center;
 
-  position: absolute;
-  right: 10%;
+  /* position: absolute; */
+  /* right: 10%; */
   /* align-items: center; */
 }
 
@@ -248,7 +252,7 @@ body::before {
   gap: 10px;
   justify-content: center;
   text-align: center;
-  
+
 }
 
 .data_util form label {
@@ -315,16 +319,26 @@ body::before {
 }
 
 .hide-class {
-  opacity: 0;
+  display: none;
 }
 
 .show-class {
+  display: flex;
   opacity: 1;
   transition: 1s;
 }
 
-/* @media (max-width: 1200px) {
+@media (max-width: 1200px) {
   .data-section {
-    flex-direction: row;
+    flex-direction: column; /* Stack contents vertically on smaller screens */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
-} */
+
+  .util_section{
+    margin-top: 10%;
+    margin-left: 0;
+    margin-bottom: 20%;
+  }
+}
