@@ -57,7 +57,8 @@ body::before {
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  flex-direction: row; /* Initially, arrange contents in a row */
+  flex-direction: row;
+  /* Initially, arrange contents in a row */
 }
 
 .label-section {
@@ -180,8 +181,17 @@ body::before {
   line-height: 23px;
   letter-spacing: 0em;
 
+  outline: none;
+
   /* Make the input field stretch to the full width */
 }
+
+.input-section input[type="text"]:focus{
+  outline-color: #60E3D5;
+  outline-style: solid;
+  outline-width: medium;
+}
+
 
 .input-section input[type="submit"] {
   width: fit-content;
@@ -279,6 +289,12 @@ body::before {
   letter-spacing: 0em;
 }
 
+.data_util form  input[type="text"]:focus{
+  outline-color: #60E3D5;
+  outline-style: solid;
+  outline-width: medium;
+}
+
 .submit_button {
   margin-top: 10px;
   width: 98px;
@@ -330,13 +346,14 @@ body::before {
 
 @media (max-width: 1200px) {
   .data-section {
-    flex-direction: column; /* Stack contents vertically on smaller screens */
+    flex-direction: column;
+    /* Stack contents vertically on smaller screens */
     align-items: center;
     justify-content: center;
     gap: 20px;
   }
 
-  .util_section{
+  .util_section {
     margin-top: 10%;
     margin-left: 0;
     margin-bottom: 20%;

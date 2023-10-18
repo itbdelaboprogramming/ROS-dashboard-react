@@ -9,7 +9,7 @@ export default function CloseButton({ onClick }) {
       className={styles.closeButton}
       onClick={onClick}
     >
-      <Image src="/icons/Exit.svg" alt="" width={20} height={20} />
+      <Image src="/icons/Exit.svg" alt="" width={30} height={30} />
     </button>
   );
 }

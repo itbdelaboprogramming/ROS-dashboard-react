@@ -6,7 +6,6 @@ import ConfirmElement from "../../components/confirm-element/confirmElement";
 import { useRouter } from "next/navigation";
 import CloseButton from "../../components/close-button/closeButton";
 import Footer from "../../components/footer/footer";
-import Instruction from "../../components/instruction/instruction";
 
 export default function Home() {
   const router = useRouter();
@@ -149,7 +148,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <Instruction /> */}
       <Footer />
     </body>
   );
