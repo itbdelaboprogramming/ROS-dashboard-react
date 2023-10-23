@@ -9,6 +9,7 @@
     z-index: 50;
     text-align: center;
 }
+
 /* Add this CSS for the copyright section */
 .copyright {
     display: flex;
@@ -84,5 +85,15 @@
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
+    .theFooter {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .copyright {
+        margin-left: 0;
+    }
 }

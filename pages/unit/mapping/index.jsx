@@ -43,85 +43,147 @@ export default function Mapping() {
 
   return (
     <>
-      <MapSaving status={savingConfirmDialog} />
-      <Navigation />
+      {" "}
       <ConfirmElement
         message="Are you sure you want to close this app?"
         status={showConfirmClosePageDialog}
         onCancel={handleCancel}
       />
-
       <ConfirmSaving
         message="Are you sure you want to stop and save the map?"
         status={showConfirmMappingDialog}
         onCancel={handleDatabaseCancel}
         onConfirm={onConfirmSaveMappingButtonClick}
       />
-      <CloseButton onClick={onConfirmButtonClick} />
-      
+      <MapSaving status={savingConfirmDialog} />
       <div className={styles.container}>
-        <div className={styles.statusSection}>
-          <div
-            className={`${styles.status} ${
-              status == "Idle" ? styles.idle : ""
-            }`}
-          >
-            <img src="/icons/information-circle-svgrepo-com.svg" alt="" />
-            <p>
-              Status : <span>{status}</span>
-            </p>
+        <div className={styles.parents}>
+          <CloseButton onClick={onConfirmButtonClick} />
+          <div className={styles.navigation}>
+            <Navigation />
           </div>
-          <div className={styles.lidar}>
-            <p>LIDAR</p>
-          </div>
-          <div className={styles.lidarButton}>
-            <label className={styles.toggleSwitch}>
-              <input type="checkbox" className={styles.toggleInput} />
-              <span className={styles.slider}></span>
-            </label>
-          </div>
-        </div>
-        <div className={styles.mapSection}>
-          <div className={styles.topDiv}>
-            <p>Create a New Map</p>
-            <div
-              className={`${styles.playButton} ${
-                status == "On Progress" ? styles.buttonActive : ""
-              }`}
-              onClick={() => changeStatus("On Progress")}
-            >
-              <p>Play</p>
-              <img src="/icons/3.svg" alt="" />
+          <div className={styles.mapSection}>
+            <div className={styles.topDiv}>
+              <p>Create a New Map</p>
+              <div
+                className={`${styles.playButton} ${
+                  status == "On Progress" ? styles.buttonActive : ""
+                }`}
+                onClick={() => changeStatus("On Progress")}
+              >
+                <p>Play</p>
+                <img src="/icons/3.svg" alt="" />
+              </div>
+              <div
+                className={`${styles.pauseButton} ${
+                  status == "Idle" ? styles.buttonActive : ""
+                }`}
+                onClick={() => changeStatus("Idle")}
+              >
+                <p>Pause</p>
+                <img src="/icons/1.svg" alt="" />
+              </div>
+              <div
+                className={styles.stopButton}
+                onClick={onConfirmMappingButtonClick}
+              >
+                <p>Stop</p>
+                <img src="/icons/2.svg" alt="" />
+              </div>
+              <div className={styles.settingsButton}>
+                <img src="/icons/Setting.svg" alt="" />
+                <p>Please turn on the LiDAR before mapping.</p>
+              </div>
             </div>
-            <div
-              className={`${styles.pauseButton} ${
-                status == "Idle" ? styles.buttonActive : ""
-              }`}
-              onClick={() => changeStatus("Idle")}
-            >
-              <p>Pause</p>
-              <img src="/icons/1.svg" alt="" />
-            </div>
-            <div
-              className={styles.stopButton}
-              onClick={onConfirmMappingButtonClick}
-            >
-              <p>Stop</p>
-              <img src="/icons/2.svg" alt="" />
-            </div>
-            <div className={styles.settingsButton}>
-              <img src="/icons/Setting.svg" alt="" />
-              <p>Please turn on the LiDAR before mapping.</p>
-            </div>
-          </div>
 
-          <div className={styles.centerDiv}>
-            <img src="/icons/Frame.svg" alt="" />
+            <div className={styles.centerDiv}>
+              <img src="/icons/Frame.svg" alt="" />
+            </div>
           </div>
+          <Footer />
         </div>
-
-        <Footer />
       </div>
     </>
+    // <>
+
+    //   <Navigation />
+    //   <ConfirmElement
+    //     message="Are you sure you want to close this app?"
+    //     status={showConfirmClosePageDialog}
+    //     onCancel={handleCancel}
+    //   />
+
+    //   <ConfirmSaving
+    //     message="Are you sure you want to stop and save the map?"
+    //     status={showConfirmMappingDialog}
+    //     onCancel={handleDatabaseCancel}
+    //     onConfirm={onConfirmSaveMappingButtonClick}
+    //   />
+    //   <CloseButton onClick={onConfirmButtonClick} />
+
+    //   <div className={styles.container}>
+    //     <div className={styles.statusSection}>
+    //       <div
+    //         className={`${styles.status} ${
+    //           status == "Idle" ? styles.idle : ""
+    //         }`}
+    //       >
+    //         <img src="/icons/information-circle-svgrepo-com.svg" alt="" />
+    //         <p>
+    //           Status : <span>{status}</span>
+    //         </p>
+    //       </div>
+    //       <div className={styles.lidar}>
+    //         <p>LIDAR</p>
+    //       </div>
+    //       <div className={styles.lidarButton}>
+    //         <label className={styles.toggleSwitch}>
+    //           <input type="checkbox" className={styles.toggleInput} />
+    //           <span className={styles.slider}></span>
+    //         </label>
+    //       </div>
+    //     </div>
+    //     <div className={styles.mapSection}>
+    //       <div className={styles.topDiv}>
+    //         <p>Create a New Map</p>
+    //         <div
+    //           className={`${styles.playButton} ${
+    //             status == "On Progress" ? styles.buttonActive : ""
+    //           }`}
+    //           onClick={() => changeStatus("On Progress")}
+    //         >
+    //           <p>Play</p>
+    //           <img src="/icons/3.svg" alt="" />
+    //         </div>
+    //         <div
+    //           className={`${styles.pauseButton} ${
+    //             status == "Idle" ? styles.buttonActive : ""
+    //           }`}
+    //           onClick={() => changeStatus("Idle")}
+    //         >
+    //           <p>Pause</p>
+    //           <img src="/icons/1.svg" alt="" />
+    //         </div>
+    //         <div
+    //           className={styles.stopButton}
+    //           onClick={onConfirmMappingButtonClick}
+    //         >
+    //           <p>Stop</p>
+    //           <img src="/icons/2.svg" alt="" />
+    //         </div>
+    //         <div className={styles.settingsButton}>
+    //           <img src="/icons/Setting.svg" alt="" />
+    //           <p>Please turn on the LiDAR before mapping.</p>
+    //         </div>
+    //       </div>
+
+    //       <div className={styles.centerDiv}>
+    //         <img src="/icons/Frame.svg" alt="" />
+    //       </div>
+    //     </div>
+
+    //     <Footer />
+    //   </div>
+    // </>
   );
 }

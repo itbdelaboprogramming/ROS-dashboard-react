@@ -1,91 +1,56 @@
-/* Add a color overlay */
 .container {
-    background-image: url('/images/Walpaper.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* Prevent the image from repeating */
-    background-attachment: fixed;
-    /* Keeps the background fixed when scrolling */
+    /* background: url('/images/Walpaper_without_watermark.png'), #4E6CB1; */
+    background: linear-gradient(rgba(78, 108, 177, 0.5), rgba(78, 108, 177, 0.5)), url('/images/Walpaper_without_watermark.png');
+    /* background-color: #4E6CB1; */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     position: absolute;
 
-}
-
-.container::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #4E6CB1;
-    /* Your desired color */
-    opacity: 0.5;
-    /* Adjust the opacity to control the color intensity */
-    z-index: 1;
-    /* Place it in front of other content */
+    overflow-x: auto;
+    -ms-overflow-x: auto;
 }
 
 .parents {
+    /* z-index: 2; */
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+
     max-width: 1440px;
-    max-height: 1024px;
-    width: 100%;
     height: 100%;
 
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
     position: relative;
 }
 
 
 
-
-/* CSS for the close button */
-.close-button {
-    position: absolute;
-    top: 10px;
-    /* Adjust the top position as needed */
-    right: 10px;
-    /* Adjust the right position as needed */
-    background-color: #0C98B4;
-    border: 2px solid #60E3D5;
-    /* Red background color, you can change this */
-    color: #FFFFFF;
-    /* White text color */
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 19px;
-    letter-spacing: 0em;
-    z-index: 1;
-    /* Ensure it's on top of other content */
-}
-
-.close-button:hover {
-    box-shadow: 0px 4px 4px 0px #0567A680;
-    transition: 0.5s;
-    /* Change color on hover */
+.navigation {
+    z-index: 3;
 }
 
 
+@media (max-width: 1439px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-/* MENU */
+    .parents {
+        flex-direction: column;
+        align-items: center;
+        display: inline;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-/* main {
-    display: flex;
-    justify-content: space-between;
+    .container Footer {
+        /* position: fixed; */
+
+        /* bottom: 0; */
+    }
 }
- */
-
-/* ------------------------------ */
-
-
-/* MAP SECTION */

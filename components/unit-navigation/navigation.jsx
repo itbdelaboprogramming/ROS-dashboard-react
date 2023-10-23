@@ -19,8 +19,15 @@ export default function Navigation() {
   };
 
   const goToDatabasePage = () => {
+    console.log("rrr");
     router.push("/unit/database");
   };
+
+  const navLinks = [
+    { href: "/unit/control", text: "Control Mode" },
+    { href: "/unit/mapping", text: "Mapping" },
+    { href: "/unit/database", text: "Database" },
+  ];
 
   return (
     <>
@@ -67,6 +74,30 @@ export default function Navigation() {
               <p>Database</p>
             </Link>
           </div>
+        </div>
+      </div>
+
+      <div className={`${styles.centerSection}`}>
+        <div
+          className={`${styles.greetings} ${
+            isActive("/unit/control") && styles.active
+          }`}
+        >
+          <img src="/icons/user-10-svgrepo-com.svg" alt="" />
+          <p>Welcome, Unit A!</p>
+        </div>
+        <div className={`${styles.menu}`}>
+        <select
+            className={styles.menu}
+            value={router.pathname}
+            onChange={(e) => router.push(e.target.value)}
+          >
+            {navLinks.map((link) => (
+              <option key={link.href} value={link.href}>
+                {link.text}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
     </>

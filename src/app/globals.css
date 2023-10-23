@@ -2,7 +2,7 @@
 
 
 body {
-  background-image: url('/images/Walpaper.png');
+  background-image: url('/images/Walpaper_without_watermark.png');
   /* Replace with the path to your image */
   background-size: cover;
   /* This property ensures the image covers the entire background */
@@ -186,7 +186,7 @@ body::before {
   /* Make the input field stretch to the full width */
 }
 
-.input-section input[type="text"]:focus{
+.input-section input[type="text"]:focus {
   outline-color: #60E3D5;
   outline-style: solid;
   outline-width: medium;
@@ -236,6 +236,8 @@ body::before {
   justify-content: center;
   align-items: center;
 
+  margin-bottom: 20vh;
+
   /* position: absolute; */
   /* right: 10%; */
   /* align-items: center; */
@@ -243,6 +245,7 @@ body::before {
 
 
 .data_util form {
+  margin-top: 10px;
   width: 272px;
   height: 103px;
   padding: 20px;
@@ -270,7 +273,7 @@ body::before {
   font-weight: bold;
   color: #0567A6;
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 27px;
   letter-spacing: 0em;
@@ -289,14 +292,14 @@ body::before {
   letter-spacing: 0em;
 }
 
-.data_util form  input[type="text"]:focus{
+.data_util form input[type="text"]:focus {
   outline-color: #60E3D5;
   outline-style: solid;
   outline-width: medium;
 }
 
 .submit_button {
-  margin-top: 10px;
+  margin-top: 20px;
   width: 98px;
   height: 47px;
   display: flex;
@@ -308,7 +311,8 @@ body::before {
   border: 2px solid #60E3D5;
   border-radius: 3px;
 
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
+  padding-left: 10px;
   color: #fff;
   font-family: 'Inter', sans-serif;
   font-size: 19px;
@@ -335,13 +339,22 @@ body::before {
 }
 
 .hide-class {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  flex-direction: column;
+  transition: max-height 0.3s, opacity 0.3s;
+  display: flex;
+  /* keep the display value for initial rendering */
 }
 
 .show-class {
-  display: flex;
+  max-height: 1000px;
+  /* You can set a large value or use a JavaScript-based value that fits your content */
   opacity: 1;
-  transition: 1s;
+  transition: max-height 0.5s, opacity 0.5s;
+  display: flex;
+  /* display flex when element is shown */
 }
 
 @media (max-width: 1200px) {
@@ -356,6 +369,7 @@ body::before {
   .util_section {
     margin-top: 10%;
     margin-left: 0;
-    margin-bottom: 20%;
+    margin-bottom: 50%;
   }
+
 }

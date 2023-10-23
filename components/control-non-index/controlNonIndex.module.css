@@ -1,7 +1,8 @@
-
 .mapSection {
     width: 1102px;
+    /* min-width: 1000px; */
     max-height: 1024px;
+    /* min-height: 900px; */
     height: 80%;
     background-color: #D0E1E7;
     border: 2px solid #0C98B4;
@@ -27,7 +28,6 @@
 /* --------------------------------------------- */
 
 .centerDiv {
-
     font-family: 'Inter', sans-serif;
     font-size: 26px;
     font-weight: 500;
@@ -35,9 +35,8 @@
     letter-spacing: 0em;
     text-align: left;
     color: #0C98B4;
-    
-    text-align: center;
 
+    text-align: center;
 }
 
 .centerDiv .location {
@@ -81,7 +80,7 @@
     margin: 0;
     /* Remove default margin for <p> element */
     font-family: 'Inter', sans-serif;
-    font-size: 1em;
+    font-size: 100%;
     font-weight: 500;
     line-height: 27px;
     letter-spacing: 0em;
@@ -92,4 +91,14 @@
 
 .bolder {
     font-weight: 700;
+}
+
+
+
+@media (max-width: 1439px) {
+    .mapSection {
+        position: relative;
+        right: 0;
+        margin-top: 0;
+    }
 }

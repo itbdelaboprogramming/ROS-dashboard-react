@@ -25,20 +25,23 @@ export default function Control() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.parents}>
-        <Navigation />
-        <ConfirmElement
-          message="Are you sure you want to close this app?"
-          status={showConfirmDialog}
-          onCancel={handleCancel}
-        />
-        <CloseButton onClick={onConfirmButtonClick} />
-
-        {index == null ? <ControlNonIndex /> : <ControlIndex />}
-
-        <Footer />
+    <>
+      {" "}
+      <ConfirmElement
+        message="Are you sure you want to close this app?"
+        status={showConfirmDialog}
+        onCancel={handleCancel}
+      />
+      <div className={styles.container}>
+        <div className={styles.parents}>
+          <CloseButton onClick={onConfirmButtonClick} />
+          <div className={styles.navigation}>
+            <Navigation />
+          </div>
+          {index == null ? <ControlNonIndex /> : <ControlIndex />}
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
