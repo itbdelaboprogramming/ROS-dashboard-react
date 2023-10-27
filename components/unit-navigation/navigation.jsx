@@ -19,7 +19,6 @@ export default function Navigation() {
   };
 
   const goToDatabasePage = () => {
-    console.log("rrr");
     router.push("/unit/database");
   };
 
@@ -87,9 +86,9 @@ export default function Navigation() {
           <p>Welcome, Unit A!</p>
         </div>
         <div className={`${styles.menu}`}>
-        <select
-            className={styles.menu}
-            value={router.pathname}
+          <select
+            className={`${styles.menu} `}
+            value={pathname} // Set "/unit/control" as the default value
             onChange={(e) => router.push(e.target.value)}
           >
             {navLinks.map((link) => (

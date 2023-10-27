@@ -1,32 +1,33 @@
 .theFooter {
     display: flex;
-    position: fixed;
-    bottom: 0;
-    right: 25px;
-    left: 25px;
-    padding-left: 1%;
+    width: 100%;
+    max-width: 1440px;
+    /* background-color: red; */
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: red; */
     padding-bottom: 0.5%;
-    z-index: 50;
+    /* z-index: 50; */
     text-align: center;
+    /* margin-top: 0.5vw; */
 }
 
-/* Add this CSS for the copyright section */
+
 .copyright {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: auto;
     margin-top: auto;
+    margin-right: 25px;
     width: 188px;
     height: 35px;
-    /* Pushes the copyright text to the bottom */
+
     color: #D0E1E7;
     background-color: #4E6CB1;
     border: 2px solid #60E3D5;
     border-radius: 10px;
     font-size: 19px;
-    /* padding-left: 1%; */
-    /* padding-right: 1%; */
 
     font-family: 'Inter', sans-serif;
     font-size: 19px;
@@ -43,8 +44,11 @@
     font-weight: 500;
     text-align: center;
     color: #FFFFFF;
+    margin-left: 25px;
 
     align-items: center;
+
+    gap: 20px;
 }
 
 .handlingInstructions,
@@ -62,7 +66,6 @@
     background-color: #0C98B4;
     border: 2px solid #60E3D5;
     border-radius: 10px;
-    margin-left: 2%;
 }
 
 .handlingInstructions:hover,
@@ -91,9 +94,11 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
+        margin-top: 10%;
     }
 
     .copyright {
-        margin-left: 0;
+        margin-left: 45px;
     }
 }
+

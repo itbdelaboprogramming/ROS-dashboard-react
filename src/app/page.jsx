@@ -148,7 +148,9 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer status={true} />
+      <div className="theFooter">
+        <Footer status={true} />
+      </div>
     </body>
   );
 }

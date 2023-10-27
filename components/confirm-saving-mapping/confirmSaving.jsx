@@ -5,7 +5,6 @@ export default function ConfirmSaving(props) {
   const router = useRouter();
 
   const handleCancelClick = () => {
-    console.log("rrr");
     // Call the callback function to set showConfirmDialog to false
     props.onCancel();
   };

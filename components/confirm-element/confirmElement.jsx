@@ -5,7 +5,6 @@ export default function ConfirmElement(props) {
   const router = useRouter();
 
   const handleCancelClick = () => {
-    console.log("rrr");
     // Call the callback function to set showConfirmDialog to false
     props.onCancel();
   };
@@ -28,12 +27,15 @@ export default function ConfirmElement(props) {
       <div className={styles.confirmationDialog}>
         <p>{props.message}</p>
         <div className={styles.buttonContainer}>
+
           <button className={styles.buttonConfirm} onClick={confirmClick}>
             Confirm
           </button>
+          
           <button className={styles.buttonConfirm} onClick={handleCancelClick}>
             Cancel
           </button>
+        
         </div>
       </div>
     </div>

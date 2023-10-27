@@ -2,8 +2,8 @@
     /* background: url('/images/Walpaper_without_watermark.png'), #4E6CB1; */
     background: linear-gradient(rgba(78, 108, 177, 0.5), rgba(78, 108, 177, 0.5)), url('/images/Walpaper_without_watermark.png');
     /* background-color: #4E6CB1; */
-    /* background-size: cover;
-    background-repeat: no-repeat; */
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     top: 0;
@@ -26,12 +26,9 @@
     position: relative;
 }
 
-
-
 .navigation {
     z-index: 3;
 }
-
 
 @media (max-width: 1439px) {
     .container {
@@ -47,10 +44,12 @@
         margin-left: auto;
         margin-right: auto;
     }
+}
 
-    .container Footer {
-        /* position: fixed; */
-
-        /* bottom: 0; */
+@media (max-width: 1200px) {
+    .theFooter{
+        padding-bottom: 100px;
+        height: 100%;
+        background-color: red;
     }
 }

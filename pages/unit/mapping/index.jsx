@@ -13,6 +13,7 @@ export default function Mapping() {
   const [showConfirmMappingDialog, setShowConfirmMappingDialog] =
     useState(false);
   const [savingConfirmDialog, setSavingConfirmDialog] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   // const [buttonActive, setButtonActive] = useState("");
   const [status, setStatus] = useState("On Progress");
@@ -34,11 +35,17 @@ export default function Mapping() {
   };
 
   const changeStatus = (newStatus) => {
-    setStatus(newStatus);
+    isChecked == false ? setStatus(newStatus) : setStatus("Idle");
   };
 
   const onConfirmSaveMappingButtonClick = () => {
     setSavingConfirmDialog(true);
+  };
+
+  const handleCheckboxChange = (event) => {
+    // Update the state with the new checkbox value
+    setIsChecked(event.target.checked);
+    isChecked == false ? changeStatus("Idle") : "";
   };
 
   return (
@@ -58,6 +65,34 @@ export default function Mapping() {
       <MapSaving status={savingConfirmDialog} />
       <div className={styles.container}>
         <div className={styles.parents}>
+          <div className={styles.statusSection}>
+            <div
+              className={`${styles.status} ${
+                status == "Idle" ? styles.idle : ""
+              }`}
+            >
+              <img src="/icons/information-circle-svgrepo-com.svg" alt="" />
+              <p>
+                Status : <span>{status}</span>
+              </p>
+            </div>
+
+            <div className={styles.lidar}>
+              <p>LIDAR</p>
+            </div>
+
+            <div className={styles.lidarButton}>
+              <label className={styles.toggleSwitch}>
+                <input
+                  type="checkbox"
+                  className={styles.toggleInput}
+                  checked={isChecked} // Bind the checkbox value to the state
+                  onChange={handleCheckboxChange} // Handle checkbox value change
+                />
+                <span className={styles.slider}></span>
+              </label>
+            </div>
+          </div>
           <CloseButton onClick={onConfirmButtonClick} />
           <div className={styles.navigation}>
             <Navigation />
@@ -104,86 +139,5 @@ export default function Mapping() {
         </div>
       </div>
     </>
-    // <>
-
-    //   <Navigation />
-    //   <ConfirmElement
-    //     message="Are you sure you want to close this app?"
-    //     status={showConfirmClosePageDialog}
-    //     onCancel={handleCancel}
-    //   />
-
-    //   <ConfirmSaving
-    //     message="Are you sure you want to stop and save the map?"
-    //     status={showConfirmMappingDialog}
-    //     onCancel={handleDatabaseCancel}
-    //     onConfirm={onConfirmSaveMappingButtonClick}
-    //   />
-    //   <CloseButton onClick={onConfirmButtonClick} />
-
-    //   <div className={styles.container}>
-    //     <div className={styles.statusSection}>
-    //       <div
-    //         className={`${styles.status} ${
-    //           status == "Idle" ? styles.idle : ""
-    //         }`}
-    //       >
-    //         <img src="/icons/information-circle-svgrepo-com.svg" alt="" />
-    //         <p>
-    //           Status : <span>{status}</span>
-    //         </p>
-    //       </div>
-    //       <div className={styles.lidar}>
-    //         <p>LIDAR</p>
-    //       </div>
-    //       <div className={styles.lidarButton}>
-    //         <label className={styles.toggleSwitch}>
-    //           <input type="checkbox" className={styles.toggleInput} />
-    //           <span className={styles.slider}></span>
-    //         </label>
-    //       </div>
-    //     </div>
-    //     <div className={styles.mapSection}>
-    //       <div className={styles.topDiv}>
-    //         <p>Create a New Map</p>
-    //         <div
-    //           className={`${styles.playButton} ${
-    //             status == "On Progress" ? styles.buttonActive : ""
-    //           }`}
-    //           onClick={() => changeStatus("On Progress")}
-    //         >
-    //           <p>Play</p>
-    //           <img src="/icons/3.svg" alt="" />
-    //         </div>
-    //         <div
-    //           className={`${styles.pauseButton} ${
-    //             status == "Idle" ? styles.buttonActive : ""
-    //           }`}
-    //           onClick={() => changeStatus("Idle")}
-    //         >
-    //           <p>Pause</p>
-    //           <img src="/icons/1.svg" alt="" />
-    //         </div>
-    //         <div
-    //           className={styles.stopButton}
-    //           onClick={onConfirmMappingButtonClick}
-    //         >
-    //           <p>Stop</p>
-    //           <img src="/icons/2.svg" alt="" />
-    //         </div>
-    //         <div className={styles.settingsButton}>
-    //           <img src="/icons/Setting.svg" alt="" />
-    //           <p>Please turn on the LiDAR before mapping.</p>
-    //         </div>
-    //       </div>
-
-    //       <div className={styles.centerDiv}>
-    //         <img src="/icons/Frame.svg" alt="" />
-    //       </div>
-    //     </div>
-
-    //     <Footer />
-    //   </div>
-    // </>
   );
 }

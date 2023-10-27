@@ -14,19 +14,20 @@
     /* Place it in front of other content */
 }
 
-.hide{
+.hide {
     opacity: 0;
     display: none;
 }
 
 .confirmationDialog {
     /* height: 10vh; */
+    width: 300px;
+    height: 121px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #D9FEFA;
-    padding: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     text-align: center;
@@ -34,6 +35,8 @@
     border: 3px solid #60E3D5;
     border-radius: 5px;
 
+    gap: 10px;
+    padding-bottom: 10px;
 
     font-family: 'Inter', sans-serif;
     font-size: 19px;
@@ -46,18 +49,30 @@
 
 }
 
+.confirmationDialog p {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 .buttonContainer {
     display: flex;
     justify-content: space-between;
+    padding-right: 51px;
+    padding-left: 51px;
 }
 
 .buttonConfirm {
     background-color: #0C98B4;
     border: 2px solid #60E3D5;
     border-radius: 5px;
+    width: 68px;
+    height: 35px;
+    display: flex;
+
+    justify-content: center;
 
     font-family: 'Inter', sans-serif;
-    font-size: 0.8em;
+    font-size: 12px;
     font-weight: 700;
     line-height: 15px;
     letter-spacing: 0em;
