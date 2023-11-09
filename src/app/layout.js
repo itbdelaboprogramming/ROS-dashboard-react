@@ -1,3 +1,4 @@
+import Providers from '@/redux/provider'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -12,7 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-      <body className={inter.className} suppressHydrationWarning={true}>{children}</body>
+      <body className={inter.className} suppressHydrationWarning={true}>
+        <Providers>
+            {children}
+        </Providers>
+      </body>
     </html>
   )
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import ConfirmElement from "../../../components/confirm-element/confirmElement";
 import Navigation from "../../../components/unit-navigation/navigation";
@@ -10,13 +12,24 @@ import ConfirmDelete from "../../../components/confirm-delete/confirmDelete";
 
 export default function Database() {
   const router = useRouter();
+  // const [disabled, setDisabled] = useState(false);
+  // console.log(mapIndex);
 
+  const initialCheckedIndex =
+    typeof window !== "undefined" ? localStorage.getItem("mapIndex") : -1;
+  const [checkedIndex, setCheckedIndex] = useState(initialCheckedIndex);
+
+  let mapIndex;
+
+  if (typeof window !== "undefined" && window.localStorage) {
+    mapIndex = parseInt(localStorage.getItem("mapIndex"));
+    // setDisabled(mapIndex >= 0);
+  }
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOrder, setSortOrder] = useState("asc");
   const [sortDateOrder, setDateSortOrder] = useState("asc");
-  const [checkedIndex, setCheckedIndex] = useState(-1);
   const [deleteItemConfirm, setDeleteItemConfirm] = useState(false);
   const [indexDelete, setIndexDelete] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
@@ -126,10 +139,19 @@ export default function Database() {
   };
 
   const handleCheckboxChange = (index) => {
-    if (checkedIndex === index) {
+    console.log("mapIndex : ", mapIndex);
+    console.log("checkedIndex : ", checkedIndex);
+    console.log("index : ", index);
+    console.log("");
+
+    if (mapIndex == index) {
+      console.log("nnnn");
+      localStorage.setItem("mapIndex", -1);
       setCheckedIndex(-1);
     } else {
+      console.log("ppp");
       setCheckedIndex(index);
+      localStorage.setItem("mapIndex", index);
     }
   };
 
@@ -171,6 +193,7 @@ export default function Database() {
   });
 
   const currentData = filteredData.slice(startIndex, endIndex);
+
   return (
     <>
       {" "}
@@ -262,7 +285,7 @@ export default function Database() {
                           <input
                             type="checkbox"
                             id={`checklistItem${index}`}
-                            checked={checkedIndex === index}
+                            checked={mapIndex == index}
                             onChange={() => handleCheckboxChange(index)}
                           />
                           <label htmlFor={`checklistItem${index}`}></label>
@@ -291,15 +314,19 @@ export default function Database() {
                 />
                 <p>Rename the map by double-click the name</p>
               </div>
+              {console.log("FFF", checkedIndex)}
               <div
                 className={`${styles.confirmMappingChoosed} ${
-                  checkedIndex == -1 ? styles.disable : ""
+                  initialCheckedIndex > -1 || mapIndex > -1
+                    ? ""
+                    : styles.disable
                 }`}
                 onClick={goToControlWithIndex}
               >
                 <p>Go to the Map</p>
                 <Image src="/icons/3.svg" width={20} height={20} alt="play" />
               </div>
+
               <div className={styles.pagination}>
                 <button
                   className={`${styles.bottonPagination} ${

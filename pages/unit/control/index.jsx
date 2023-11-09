@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ConfirmElement from "../../../components/confirm-element/confirmElement";
 import Navigation from "../../../components/unit-navigation/navigation";
 import styles from "./controle.module.css";
@@ -8,8 +8,26 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import ControlNonIndex from "../../../components/control-non-index/controlNonIndex";
 import ControlIndex from "../../../components/control-index/controlIndex";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Control() {
+  //Redux Section
+  // const dispatch = useDispatch();
+  // const mapRedux = useSelector((state) => state.maps);
+
+  const [mapIndex, setMapIndex] = useState(-1);
+  // let mapIndex;
+  useEffect(() => {
+    // storing input name
+    setMapIndex(
+      localStorage.getItem("mapIndex") == null
+        ? -1
+        : localStorage.getItem("mapIndex")
+    );
+
+    console.log(mapIndex);
+  }, []);
+
   const searchParams = useSearchParams();
   const index = searchParams.get("index");
 
@@ -32,16 +50,20 @@ export default function Control() {
         status={showConfirmDialog}
         onCancel={handleCancel}
       />
-      <div className={styles.container}>
-        <div className={styles.parents}>
-          <CloseButton onClick={onConfirmButtonClick} />
-          <div className={styles.navigation}>
-            <Navigation />
+      {mapIndex < 0 ? (
+        <div className={styles.container}>
+          <div className={styles.parents}>
+            <CloseButton onClick={onConfirmButtonClick} />
+            <div className={styles.navigation}>
+              <Navigation />
+            </div>
+            <ControlNonIndex />
+            <Footer />
           </div>
-          {index == null ? <ControlNonIndex /> : <ControlIndex />}
-          <Footer />
         </div>
-      </div>
+      ) : (
+        <ControlIndex />
+      )}
     </>
   );
 }

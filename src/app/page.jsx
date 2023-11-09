@@ -10,6 +10,13 @@ import Footer from "../../components/footer/footer";
 export default function Home() {
   const router = useRouter();
 
+  if (typeof window !== "undefined") {
+    // kode yang menggunakan localStorage
+    localStorage.getItem("mapIndex") == null
+      ? localStorage.setItem("mapIndex", 0)
+      : "";
+  }
+
   const [showUtilSection, setShowUtilSection] = useState(false);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
 
